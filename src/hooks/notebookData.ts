@@ -42,4 +42,97 @@ export const notebooksData: Notebook[] = [
                 body: '1hr practise everyday'
             }
         ]
-    }]
+    },
+    {
+        id: 5453445,
+        title: 'journal',
+        notes: [
+            {
+                id: 1,
+                title: 'monday august 1st',
+                body: 'had an amazing day!!!'
+            },
+            {
+                id: 35,
+                title: 'tuesday 8th august',
+                body: 'slept a lot \nwatched videos of baby seals for 5 hours'
+            },
+            {
+                id: 4,
+                title: 'wed 9th aug',
+                body: 'wrote code for 5 hours and cried'
+            },
+            {
+                id: 5,
+                title: 'Thursday, 10th August, 2023',
+                body: 'dinner with flatmates'
+            }
+        ]
+    },
+    {
+        id: 4534,
+        title: 'journal',
+        notes: [
+            {
+                id: 1,
+                title: 'Placeholder a',
+                body: ''
+            }
+        ]
+    },
+    {
+        id: 45354,
+        title: 'journal2',
+        notes: [
+            {
+                id: 1,
+                title: 'Placeholder b',
+                body: ''
+            }
+        ]
+    },
+    {
+        id: 45334,
+        title: 'journal3',
+        notes: [
+            {
+                id: 1,
+                title: 'Placeholder c',
+                body: ''
+            }
+        ]
+    },
+    {
+        id: 94534,
+        title: 'journalb',
+        notes: [
+            {
+                id: 1,
+                title: 'Placeholder 2a',
+                body: ''
+            }
+        ]
+    },
+    {
+        id: 945354,
+        title: 'journal2b',
+        notes: [
+            {
+                id: 1,
+                title: 'Placeholder 2b',
+                body: ''
+            }
+        ]
+    },
+    {
+        id: 945334,
+        title: 'journal3b',
+        notes: [
+            {
+                id: 1,
+                title: 'Placeholder 2c',
+                body: ''
+            }
+        ]
+    },
+]

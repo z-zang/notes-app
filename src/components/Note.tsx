@@ -10,10 +10,7 @@ const Note = (props: Props) => {
     const notebook = notebooks.find(notebook => notebook.id.toString() === notebookId)!
     const note = notebook.notes.find(note => note.id.toString() === noteId)!
 
-    const [editedNote, setEditedNote] = useState(note?.body)
-    console.log('note', note)
-    console.log('editedNote', editedNote)
-
+    // console.log('note', note)
 
     const handleTextChange = (updatedBody: string) => {
 

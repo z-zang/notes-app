@@ -10,6 +10,9 @@ const Start = (props: Props) => {
 
     return (
         <main className='start'>
+            {/* <div>
+                popup
+            </div> */}
             <h1>Welcome to notes!</h1>
             {
                 notebooks.length === 0 && (
@@ -25,7 +28,7 @@ const Start = (props: Props) => {
                         <p>Recent notebooks:</p>
                         <section className='notebookContainer'>
                             {
-                                notebooks.map(notebook => (
+                                notebooks.slice(0, 3).map(notebook => (
                                     <span className='notebookLink'>
                                         <Link to={`/notebook/${notebook.id}`}>
                                             <div>
