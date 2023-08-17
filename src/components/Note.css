@@ -1,0 +1,24 @@
+.noteContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: calc(100% - 300px);
+    /* 300px: sidebar: 250px; padding: 40px; border: ~10px*/
+}
+
+.note__title,
+.note__body {
+    resize: none;
+    font-family: 'Shantell Sans', cursive;
+    border: none;
+}
+
+.note__title {
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.note__body {
+    font-size: large;
+    font-weight: 500;
+}

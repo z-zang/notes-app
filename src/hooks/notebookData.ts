@@ -40,6 +40,21 @@ export const notebooksData: Notebook[] = [
                 id: 5,
                 title: 'arms control',
                 body: '1hr practise everyday'
+            },
+            {
+                id: 6,
+                title: 'biblically accurate angel costume',
+                body: 'create costume of biblically accurate angel! with loads of eyes'
+            },
+            {
+                id: 7,
+                title: 'ITYSL example sketch',
+                body: 'write a ITSYL style sketch. ideas: \nemail subscription lists passive aggressive language'
+            },
+            {
+                id: 8,
+                title: 'cooking',
+                body: 'try and cook something new!'
             }
         ]
     },
@@ -70,19 +85,8 @@ export const notebooksData: Notebook[] = [
         ]
     },
     {
-        id: 4534,
-        title: 'journal',
-        notes: [
-            {
-                id: 1,
-                title: 'Placeholder a',
-                body: ''
-            }
-        ]
-    },
-    {
         id: 45354,
-        title: 'journal2',
+        title: 'notebook 4',
         notes: [
             {
                 id: 1,
@@ -93,7 +97,7 @@ export const notebooksData: Notebook[] = [
     },
     {
         id: 45334,
-        title: 'journal3',
+        title: 'notebook 5',
         notes: [
             {
                 id: 1,
@@ -104,33 +108,11 @@ export const notebooksData: Notebook[] = [
     },
     {
         id: 94534,
-        title: 'journalb',
+        title: 'notebook 6',
         notes: [
             {
                 id: 1,
                 title: 'Placeholder 2a',
-                body: ''
-            }
-        ]
-    },
-    {
-        id: 945354,
-        title: 'journal2b',
-        notes: [
-            {
-                id: 1,
-                title: 'Placeholder 2b',
-                body: ''
-            }
-        ]
-    },
-    {
-        id: 945334,
-        title: 'journal3b',
-        notes: [
-            {
-                id: 1,
-                title: 'Placeholder 2c',
                 body: ''
             }
         ]

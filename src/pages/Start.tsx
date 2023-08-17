@@ -1,18 +1,12 @@
 import { Link } from 'react-router-dom'
-import './Start.css'
 import { useNotebooksContext } from '../hooks/NotebooksContext'
+import './Start.css'
 
-type Props = {}
-
-const Start = (props: Props) => {
-    // const notebookArr = []
+const Start = () => {
     const { notebooks } = useNotebooksContext();
 
     return (
         <main className='start'>
-            {/* <div>
-                popup
-            </div> */}
             <h1>Welcome to notes!</h1>
             {
                 notebooks.length === 0 && (
@@ -37,15 +31,23 @@ const Start = (props: Props) => {
                                             </div>
                                         </Link>
                                     </span>
-
                                 ))
                             }
+                            {
+                                <span className='notebookLink'>
+                                    <p>
+                                        {`new
+                                        \n
+                                        notebook`}
+                                    </p>
+                                </span>
+                            }
                         </section>
-                        <p>More notebooks...</p>
+                        <p className='moreNotebooks'>More notebooks...</p>
                     </>
                 )
             }
-        </main>
+        </main >
     )
 }
 

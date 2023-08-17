@@ -1,12 +1,9 @@
-import { Outlet, useParams } from 'react-router-dom';
-import './Notebook.css'
+import { Link, useNavigate, Outlet, useParams } from 'react-router-dom';
 import { useNotebooksContext } from '../hooks/NotebooksContext';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
-type Props = {}
+import './Notebook.css'
 
-const Notebook = (props: Props) => {
+const Notebook = () => {
     const { notebookId } = useParams();
     const { notebooks } = useNotebooksContext();
     const navigate = useNavigate();
@@ -16,25 +13,27 @@ const Notebook = (props: Props) => {
     return (
         <main className='main'>
             <nav className='sidebar'>
-
-                <select name="notebook" value={notebookId} onChange={(e) => navigate(`/notebook/${e.target.value}`)}>
+                <select className="notebook__select" value={notebookId} onChange={(e) => navigate(`/notebook/${e.target.value}`)}>
                     {notebooks.map(notebook => (
-                        <option value={notebook.id} key={notebook.id}>{notebook.title}</option>
+                        <option className='notebook__option' value={notebook.id} key={notebook.id}>{notebook.title}</option>
                     ))}
                 </select>
 
                 <input type='text' className='searchbar' placeholder='Search notes...' />
 
-                {
-                    currentNotebook && currentNotebook.notes.map(note => (
-                        <Link to={`/notebook/${notebookId}/edit/${note.id}`} key={note.id}>
-                            <div>
-                                <p><strong>{note.title}</strong></p>
-                                <p>{note.body.substring(0, 25)} ...</p>
-                            </div>
-                        </Link>
-                    ))
-                }
+                <aside className='notes__container'>
+                    {
+                        currentNotebook && currentNotebook.notes.map(note => (
+                            <Link to={`/notebook/${notebookId}/edit/${note.id}`} key={note.id} >
+                                <div className='listnote'>
+                                    <p className='listnote__title'>{note.title}</p>
+                                    <p className='listnote__body'>{note.body}</p>
+                                </div>
+                            </Link>
+
+                        ))
+                    }
+                </aside>
             </nav>
 
             <Outlet />

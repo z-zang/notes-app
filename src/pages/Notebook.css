@@ -5,13 +5,63 @@
 }
 
 .sidebar {
+    width: 250px;
     border: 2px solid green;
     height: 100%;
     display: flex;
     flex-direction: column;
+
+}
+
+.notebook__select {
+    font-size: larger;
+    font-weight: 500;
+    font-family: 'Shantell Sans', cursive;
+    /* border-radius: 10px; */
+    border: none;
+    padding: 15px;
+    margin-bottom: 10px;
 }
 
 .searchbar {
     border: 2px solid sienna;
     border-radius: 20px;
+    font-weight: 500;
+    font-family: 'Shantell Sans', cursive;
+    font-size: medium;
+    padding: 10px;
+    margin: 0px 10px;
+}
+
+.notebook__option {
+    font-size: larger;
+}
+
+.notes__container {
+    overflow-y: scroll;
+}
+
+
+
+.listnote {
+    border-bottom: 1px solid brown;
+    padding: 10px;
+}
+
+.listnote__title,
+.listnote__body {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.listnote__title {
+    font-size: larger;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.listnote__body {
+    font-size: medium;
 }

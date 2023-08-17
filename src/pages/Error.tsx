@@ -1,12 +1,10 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
-type Props = {}
-
-const Error = (props: Props) => {
+const Error = () => {
     return (
         <div>
             <p>Error: Page not found</p>
-            <p>Return to home</p>
+            <Link to="">Return to home</Link>
         </div>
     )
 }
