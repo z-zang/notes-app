@@ -1,11 +1,11 @@
 export type Note = {
-    id: number,
+    id: string,
     title: string,
     body: string
 }
 
 export type Notebook = {
-    id: number,
+    id: string,
     title: string,
     notes: Note[]
 }

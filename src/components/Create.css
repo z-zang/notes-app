@@ -1,0 +1,17 @@
+.newNotebook__input {
+    font-size: large;
+    font-family: 'Shantell Sans', cursive;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.newNotebook__button {
+    border-radius: 10px;
+}
+
+.newNotebook_container {
+    display: flex;
+    margin-bottom: 20px;
+}

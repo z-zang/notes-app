@@ -1,33 +1,46 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
+import NotebooksContextProvider from './hooks/NotebooksContext'
 
-import Start from './pages/Start'
+import App from './App'
 import Error from './pages/Error'
-import Notebook from './pages/Notebook'
 import Note from './components/Note'
+import Create from './components/Create'
+import Settings from './components/Settings'
+import Manage from './components/Manage'
 
 import './index.css'
-import NotebooksContextProvider from './hooks/NotebooksContext'
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <Start />,
-        errorElement: <Error />,
+        path: '/*',
+        element: <Navigate to="/create" replace />
     },
     {
-        path: "/notebook/:notebookId",
-        element: <Notebook />,
+        path: "/",
+        element: <App />,
         errorElement: <Error />,
         children: [
+            { // todo: redirect to create when note isn't available
+                path: '*',
+                element: <Navigate to="/create" replace />
+            },
             {
-                path: "edit/:noteId",
+                path: "notebook/:notebookId/edit/:noteId",
                 element: <Note />,
             },
-            { // temp/test
-                path: "note/:noteId",
-                element: <Note />,
+            {
+                path: "manage",
+                element: <Manage />,
+            },
+            {
+                path: "settings",
+                element: <Settings />,
+            },
+            {
+                path: "create",
+                element: <Create />,
             },
         ]
     },

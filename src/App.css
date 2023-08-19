@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+    height: 100%;
+    width: 100vw;
+}
+
+.contentWrapper {
+    padding: 30px;
+    width: 67%;
+    overflow-y: scroll;
+}

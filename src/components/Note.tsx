@@ -3,7 +3,7 @@ import { useNotebooksContext } from "../hooks/NotebooksContext";
 import './Note.css'
 
 const Note = () => {
-    const { notebooks, dispatch } = useNotebooksContext()
+    const { notebooks, dispatch } = useNotebooksContext();
     const { notebookId, noteId } = useParams();
     const notebook = notebooks.find(notebook => notebook.id.toString() === notebookId)!
     const note = notebook.notes.find(note => note.id.toString() === noteId)!
@@ -12,8 +12,8 @@ const Note = () => {
         dispatch({
             type: 'UPDATE_NOTE_BODY',
             payload: {
-                notebookId: Number(notebookId),
-                noteId: Number(noteId),
+                notebookId: notebookId!,
+                noteId: noteId!,
                 body: updatedBody
             }
         })
@@ -23,25 +23,37 @@ const Note = () => {
         dispatch({
             type: 'UPDATE_NOTE_TITLE',
             payload: {
-                notebookId: Number(notebookId),
-                noteId: Number(noteId),
+                notebookId: notebookId!,
+                noteId: noteId!,
                 title: updatedTitle
             }
         })
     }
 
     return (
-
-        <div className="noteContainer">
-            {!note ? (
-                <div>Error! not a valid note url!</div>
-            ) : (<>
-                <textarea className="note__title" name="" id="" cols={10} rows={1} onChange={e => handleTitleChange(e.target.value)} value={note.title} />
-                <textarea className="note__body" name="" id="" cols={30} rows={10} onChange={e => handleTextChange(e.target.value)} value={note.body} /></>)}
-        </div>
-
-
-
+        <>
+            {notebook && noteId && (
+                <div className="noteContainer">
+                    <textarea
+                        className="note__title"
+                        name="note__title"
+                        rows={1}
+                        onChange={e => handleTitleChange(e.target.value)}
+                        value={note.title}
+                        placeholder="Untitled"
+                    />
+                    <textarea
+                        className="note__body"
+                        name="note__body"
+                        cols={30}
+                        rows={10}
+                        onChange={e => handleTextChange(e.target.value)}
+                        value={note.body}
+                        placeholder="Type something..."
+                    />
+                </div>
+            )}
+        </>
     )
 }
 
