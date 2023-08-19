@@ -1,12 +1,11 @@
-:root {
+* {
     font-family: 'Shantell Sans', cursive;
+}
+
+:root {
+    font-size: 20px;
     font-weight: 500;
     line-height: 1.5;
-
-    /* color-scheme: light dark; */
-    /* color: rgba(255, 255, 255, 0.87);
-    background-color: #242424; */
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -14,18 +13,44 @@
     -webkit-text-size-adjust: 100%;
 
     height: 100%;
-    /* margin: 0 auto; */
-    /* text-align: center; */
+
+    /* default colour (blue) variables */
+    --primary-blue: #39BAFF; /* sidebar heading and note title underline*/
+    --primary-blue-dark: #3890FB; /* add note button and searchbar border*/
+    --secondary-blue: #AFEFFF; /* sidebar listnote bg */
+    --secondary-blue-light: #ECFFFF; /* sidebar listnote selected */
+    --secondary-blue-dark: #AADEFF; /* listnote border, highlight on notebookCard input when editing */
+    --background-white: #FFFFFF; /* searchbar and note  background */
+    --text-black: #000000; /* text color*/
+    --button-gray: #EFEFEF; /* normal button bg */
+    --danger-red: #FF8E8C; /* delete button border/bg*/
+
+    /* dark (purple) mode */
+    --primary-purple: #24214F;
+    --primary-purple-light: #3F3B8E;
+    --secondary-purple: #191C29;
+    --secondary-purple-light: #39325B;
+    --secondary-purple-dark: #343258;
+    --button-purple: #373649;
+    --background-purple: #12171b;
+    --text-purple: #FFF3EE;
+    --danger-purple: #B14477;
+
+
+    --primary-theme: var(--primary-blue);
+    --primary-theme-dark: var(--primary-blue-dark);
+    --secondary-theme: var(--secondary-blue);
+    --secondary-theme-light: var(--secondary-blue-light);
+    --secondary-theme-dark: var(--secondary-blue-dark);
+    --text: var(--text-black);
+    --background: var(--background-white);
+    --button: var(--button-gray);
+    --danger: var(--danger-red);
 }
 
 a {
-    font-weight: 500;
-    color: #646cff;
+    color: var(--text);
     text-decoration: inherit;
-}
-
-a:hover {
-    color: #535bf2;
 }
 
 body {
@@ -33,18 +58,15 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-    /* width: 100%; */
-    /* place-items: center; */
 
-    /* height: 100vh; */
-    /* 
-    min-width: 320px;
-*/
 }
 
 h1 {
-    font-size: 3.2em;
+    font-size: xx-large;
+    font-weight: 600;
     line-height: 1.1;
+    margin: 0;
+    padding-bottom: 20px;
 }
 
 button {
@@ -54,31 +76,14 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
     cursor: pointer;
     transition: border-color 0.25s;
+    background-color: var(--button);
+    color: var(--text);
 }
 
-button:hover {
-    border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-
-    a:hover {
-        color: #747bff;
-    }
-
-    button {
-        background-color: #f9f9f9;
-    }
+textarea,
+input {
+    background-color: var(--background);
+    color: var(--text);
 }

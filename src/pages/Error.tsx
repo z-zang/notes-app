@@ -1,13 +1,8 @@
-import React from 'react'
+import { Navigate } from 'react-router-dom'
 
-type Props = {}
-
-const Error = (props: Props) => {
+const Error = () => {
     return (
-        <div>
-            <p>Error: Page not found</p>
-            <p>Return to home</p>
-        </div>
+        <Navigate replace to="/create" />
     )
 }
 

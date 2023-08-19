@@ -1,0 +1,13 @@
+.listNote__addNote {
+    position: fixed;
+    z-index: 20;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 100%;
+}
+
+.listNote__addNoteButton {
+    background-color: var(--primary-theme-dark);
+    padding: 12px 20px;
+    border-radius: 100%;
+}

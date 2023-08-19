@@ -1,27 +1,27 @@
-import { useState, useContext, createContext, Dispatch, SetStateAction, ReactNode } from "react";
-import { Notebook } from "../types/Notebook";
-import { notebooksData } from "./notebookData";
+import { useContext, useReducer, createContext, Dispatch, ReactNode } from "react";
+import { notebookReducer } from "./notebookReducer";
+import { Notebook } from "../types/NotebookTypes";
+import { NotebookAction } from "../types/NotebookActionTypes";
+import { notebooksData } from "../notebookData";
 
 type NotebooksContextType = {
     notebooks: Notebook[],
-    setNotebooks: Dispatch<SetStateAction<Notebook[]>>
+    dispatch: Dispatch<NotebookAction>
 }
-
-const NotebooksContext = createContext<NotebooksContextType>({
-    notebooks: [],
-    setNotebooks: () => { }
-})
-
 type NotebooksContextProviderPropsType = {
     children: ReactNode[] | ReactNode
 }
 
+const NotebooksContext = createContext<NotebooksContextType>({
+    notebooks: [],
+    dispatch: () => { }
+})
+
 const NotebooksContextProvider = ({ children }: NotebooksContextProviderPropsType) => {
-    // todo: change to useReducer?
-    const [notebooks, setNotebooks] = useState<Notebook[]>(notebooksData)
+    const [notebooks, dispatch] = useReducer(notebookReducer, notebooksData)
 
     return (
-        <NotebooksContext.Provider value={{ notebooks, setNotebooks }}>
+        <NotebooksContext.Provider value={{ notebooks, dispatch }}>
             {children}
         </NotebooksContext.Provider>
     )
