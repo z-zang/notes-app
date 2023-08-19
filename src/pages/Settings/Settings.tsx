@@ -11,6 +11,7 @@ const Settings = () => {
                     <span className="slider round" />
                 </label>
             </span>
+            <p>Made by Zichao Zang </p>
         </div>
     )
 }

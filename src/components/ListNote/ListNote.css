@@ -1,0 +1,26 @@
+.listNote {
+    border-bottom: 3px solid #AADEFF;
+    padding: 10px 20px;
+}
+
+.listNote--selected {
+    background-color: #ECFFFF;
+}
+
+.listNote__title,
+.listNote__body {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.listNote__title {
+    font-size: larger;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.listNote__body {
+    font-size: medium;
+}

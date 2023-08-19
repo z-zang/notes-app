@@ -1,11 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 const Error = () => {
     return (
-        <div>
-            <p>Error: Page not found</p>
-            <Link to="">Return to home</Link>
-        </div>
+        <Navigate replace to="/create" />
     )
 }
 

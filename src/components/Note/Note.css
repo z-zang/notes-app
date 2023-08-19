@@ -1,0 +1,35 @@
+.note__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.note__heading {
+    border-bottom: 3px solid #39BAFF;
+    padding: 0px 10px 20px 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.note__title,
+.note__body {
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.note__title {
+    font-size: xx-large;
+    font-weight: 600;
+    padding-bottom: 0;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.note__body {
+    margin-top: 20px;
+    font-size: large;
+    font-weight: 500;
+    height: 100%;
+}

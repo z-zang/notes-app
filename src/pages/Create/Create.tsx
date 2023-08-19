@@ -1,4 +1,4 @@
-import { useNotebooksContext } from "../hooks/NotebooksContext"
+import { useNotebooksContext } from "../../hooks/NotebooksContext"
 import { useState } from "react";
 import './Create.css'
 
@@ -12,7 +12,7 @@ const Create = () => {
             setShowAlert({ show: true, message: 'Please enter a title for the notebook!' })
             setTimeout(() => {
                 setShowAlert({ show: false, message: '' })
-            }, 1000);
+            }, 2000);
         } else {
             dispatch({
                 type: 'CREATE_NOTEBOOK',

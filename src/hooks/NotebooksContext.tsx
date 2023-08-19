@@ -1,7 +1,8 @@
 import { useContext, useReducer, createContext, Dispatch, ReactNode } from "react";
-import { notebookReducer, NotebookAction } from "./notebookReducer";
-import { Notebook } from "../types/Notebook";
-import { notebooksData } from "./notebookData";
+import { notebookReducer } from "./notebookReducer";
+import { Notebook } from "../types/NotebookTypes";
+import { NotebookAction } from "../types/NotebookActionTypes";
+import { notebooksData } from "../notebookData";
 
 type NotebooksContextType = {
     notebooks: Notebook[],

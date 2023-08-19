@@ -1,10 +1,10 @@
 .newNotebook__input {
     font-size: large;
-    font-family: 'Shantell Sans', cursive;
     font-weight: 500;
     border-radius: 10px;
     margin-right: 20px;
     text-align: center;
+    border: 3px solid #3890FB;
 }
 
 .newNotebook__button {

@@ -1,76 +1,31 @@
-import { Notebook } from "../types/Notebook"
 import short from 'short-uuid'
 
-type UPDATE_NOTE_BODY = {
-    type: 'UPDATE_NOTE_BODY',
-    payload: {
-        notebookId: string,
-        noteId: string,
-        body: string
-    }
-};
+import { Note, Notebook } from "../types/NotebookTypes"
+import { NotebookAction } from "../types/NotebookActionTypes"
 
-type UPDATE_NOTE_TITLE = {
-    type: 'UPDATE_NOTE_TITLE',
-    payload: {
-        notebookId: string,
-        noteId: string,
-        title: string
-    }
-};
-
-type DELETE_NOTE = {
-    type: 'DELETE_NOTE',
-    payload: {
-        notebookId: string,
-        noteId: string,
-    }
-};
-
-type CREATE_NOTE = {
-    type: 'CREATE_NOTE',
-    payload: {
-        id: string,
-        notebookId: string,
-    }
-};
-
-type CREATE_NOTEBOOK = {
-    type: 'CREATE_NOTEBOOK',
-    payload: {
-        title: string
-    }
-};
-
-type DELETE_NOTEBOOK = {
-    type: 'DELETE_NOTEBOOK',
-    payload: {
-        notebookId: string,
-    }
-};
-
-export type NotebookAction =
-    DELETE_NOTE |
-    CREATE_NOTE |
-    UPDATE_NOTE_BODY |
-    UPDATE_NOTE_TITLE |
-    CREATE_NOTEBOOK |
-    DELETE_NOTEBOOK
+const updateNotes = (notes: Note[], noteId: string, title?: string | null, body?: string | null) => {
+    return notes.map(note => {
+        if (note.id !== noteId) return note
+        return {
+            id: note.id,
+            title: title || note.title,
+            body: body || note.body
+        }
+    })
+}
 
 export const notebookReducer = (notebooks: Notebook[], action: NotebookAction) => {
-    // change to not mutate state!!!!!
-    const notebookState = [...notebooks]
-
     switch (action.type) {
-        case 'UPDATE_NOTE_BODY': {
-            const selectedNotebook = notebookState.find(notebook => notebook.id === action.payload.notebookId)!
-            selectedNotebook.notes.find(note => note.id === action.payload.noteId)!.body = action.payload.body
-            return notebookState
-        }
-        case 'UPDATE_NOTE_TITLE': {
-            const selectedNotebook = notebookState.find(notebook => notebook.id === action.payload.notebookId)!
-            selectedNotebook.notes.find(note => note.id === action.payload.noteId)!.title = action.payload.title
-            return notebookState
+        case 'UPDATE_NOTE': {
+            return notebooks.map(notebook =>
+                notebook.id === action.payload.notebookId ?
+                    {
+                        id: notebook.id,
+                        title: notebook.title,
+                        notes: updateNotes(notebook.notes, action.payload.noteId, action.payload.title, action.payload.body)
+                    }
+                    : notebook
+            )
         }
         case 'CREATE_NOTE': {
             const newNote = {
@@ -78,42 +33,55 @@ export const notebookReducer = (notebooks: Notebook[], action: NotebookAction) =
                 title: '',
                 body: ''
             }
-            const notebooksWithNewNote = notebooks.map((notebook => {
-                if (notebook.id === action.payload.notebookId) {
-                    return {
-                        id: notebook.id,
-                        title: notebook.title,
-                        notes: [newNote, ...notebook.notes]
-                    }
+
+            return notebooks.map((notebook => {
+                if (notebook.id !== action.payload.notebookId) return notebook
+
+                return {
+                    id: notebook.id,
+                    title: notebook.title,
+                    notes: [newNote, ...notebook.notes]
                 }
-                return notebook
             }))
-            // todo: get rid of all empty notes on state change
-
-            return notebooksWithNewNote
         }
+        case 'DELETE_NOTE': {
+            return notebooks.map((notebook => {
+                if (notebook.id !== action.payload.notebookId) return notebook;
 
-
-        case 'DELETE_NOTE':
-            return notebookState
-
+                return {
+                    id: notebook.id,
+                    title: notebook.title,
+                    notes: notebook.notes.filter(note => note.id !== action.payload.noteId)
+                }
+            }))
+        }
         case 'CREATE_NOTEBOOK': {
             const newNotebook = {
                 id: short.generate(),
                 title: action.payload.title,
                 notes: [{
                     id: short.generate(),
-                    title: 'New note',
+                    title: '',
                     body: ''
                 }]
             }
-            return [newNotebook, ...notebookState]
+            return [newNotebook, ...notebooks]
         }
         case 'DELETE_NOTEBOOK': {
-            const remainingNotebooks = notebookState.filter(notebook => notebook.id !== action.payload.notebookId)
-            return remainingNotebooks
+            return notebooks.filter(notebook => notebook.id !== action.payload.notebookId)
+        }
+        case 'RENAME_NOTEBOOK': {
+            return notebooks.map(notebook => {
+                if (notebook.id !== action.payload.notebookId) return notebook
+                return {
+                    id: notebook.id,
+                    title: action.payload.title,
+                    notes: notebook.notes
+                }
+
+            })
         }
         default:
-            return notebookState
+            return notebooks
     }
 }

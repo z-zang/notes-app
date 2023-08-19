@@ -1,5 +1,8 @@
-:root {
+* {
     font-family: 'Shantell Sans', cursive;
+}
+
+:root {
     font-size: 20px;
     font-weight: 500;
     line-height: 1.5;
@@ -13,10 +16,35 @@
     -webkit-text-size-adjust: 100%;
 
     height: 100%;
+
+    /* colour variables */
+    /* sidebar heading and note title underline*/
+    --primary-blue: brown;
+
+    /* add note button and searchbar border*/
+    --primary-blue-dark: brown;
+
+    /* sidebar listnote bg */
+    --secondary-blue: brown;
+
+    /* sidebar listnote bottom border */
+    --secondary-blue-light: brown;
+
+    /* searchbar and note  background */
+    --primary--white: brown;
+
+    /* text color*/
+    --primary--black: black;
+
+    /* normal button bg */
+    --primary-gray: grey;
+
+    /* delete button border and bg*/
+    --primary-red: grey;
 }
 
+
 a {
-    font-weight: 500;
     color: black;
     text-decoration: inherit;
 }
@@ -28,12 +56,13 @@ body {
     justify-content: center;
 }
 
+body.darkTheme {}
+
 h1 {
     font-size: xx-large;
+    font-weight: 600;
     line-height: 1.1;
     margin: 0;
-    padding-bottom: 20px;
-    font-weight: 600;
     padding-bottom: 20px;
 }
 
@@ -48,21 +77,6 @@ button {
     transition: border-color 0.25s;
 }
 
-button:hover {
-    border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-}
 
 @media (prefers-color-scheme: light) {
     :root {

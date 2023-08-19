@@ -4,11 +4,11 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import NotebooksContextProvider from './hooks/NotebooksContext'
 
 import App from './App'
+import Note from './components/Note/Note'
+import Create from './pages/Create/Create'
+import Settings from './pages/Settings/Settings'
+import Manage from './pages/Manage/Manage'
 import Error from './pages/Error'
-import Note from './components/Note'
-import Create from './components/Create'
-import Settings from './components/Settings'
-import Manage from './components/Manage'
 
 import './index.css'
 
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <App />,
         errorElement: <Error />,
         children: [
-            { // todo: redirect to create when note isn't available
+            {
                 path: '*',
                 element: <Navigate to="/create" replace />
             },
