@@ -24,7 +24,7 @@ const Create = () => {
             setNotebookTitle('')
             setTimeout(() => {
                 setShowAlert({ show: false, message: '' })
-            }, 1000);
+            }, 2000);
         }
     }
 

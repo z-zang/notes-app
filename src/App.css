@@ -4,8 +4,22 @@
     width: 100vw;
 }
 
+main.dark {
+    --primary-theme: var(--primary-purple);
+    --primary-theme-dark: var(--primary-purple-light);
+    --secondary-theme: var(--secondary-purple);
+    --secondary-theme-light: var(--secondary-purple-light);
+    --secondary-theme-dark: var(--secondary-purple-dark);
+    --text: var(--text-purple);
+    --background: var(--background-purple);
+    --button: var(--button-purple);
+    --danger: var(--danger-purple)
+}
+
 .contentWrapper {
     padding: 30px;
     width: 67%;
     overflow-y: scroll;
+    background-color: var(--background);
+    color: var(--text);
 }

@@ -18,8 +18,8 @@ const Note = () => {
     const note = notebook.notes.find(note => note.id === noteId)!
 
     const handleNoteChange = ({ title, body }: {
-        title: string | null,
-        body: string | null
+        title: string,
+        body: string
     }) => {
         dispatch({
             type: 'UPDATE_NOTE',
@@ -39,7 +39,7 @@ const Note = () => {
                     className="note__title"
                     name="note__title"
                     ref={titleRef}
-                    onChange={e => handleNoteChange({ title: e.target.value, body: null })}
+                    onChange={e => handleNoteChange({ title: e.target.value, body: note.body })}
                     value={note.title}
                     placeholder="Untitled"
                 />
@@ -49,7 +49,7 @@ const Note = () => {
                 className="note__body"
                 name="note__body"
                 ref={null}
-                onChange={e => handleNoteChange({ title: null, body: e.target.value })}
+                onChange={e => handleNoteChange({ title: note.title, body: e.target.value })}
                 value={note.body}
                 placeholder="Type something..."
             />

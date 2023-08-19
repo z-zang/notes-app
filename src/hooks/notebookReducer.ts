@@ -3,13 +3,13 @@ import short from 'short-uuid'
 import { Note, Notebook } from "../types/NotebookTypes"
 import { NotebookAction } from "../types/NotebookActionTypes"
 
-const updateNotes = (notes: Note[], noteId: string, title?: string | null, body?: string | null) => {
+const updateNotes = (notes: Note[], noteId: string, title: string, body: string) => {
     return notes.map(note => {
         if (note.id !== noteId) return note
         return {
             id: note.id,
-            title: title || note.title,
-            body: body || note.body
+            title: title,
+            body: body
         }
     })
 }

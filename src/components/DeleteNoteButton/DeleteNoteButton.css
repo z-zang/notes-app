@@ -1,5 +1,5 @@
 .note__deleteButton {
     padding: 12px 15px 7px 15px;
     height: fit-content;
-    border: 3px solid #FF8E8C;
+    border: 3px solid var(--danger);
 }

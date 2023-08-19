@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import NotebooksContextProvider from './hooks/NotebooksContext'
-
+import ThemeContextProvider from './hooks/ThemeContext'
 import App from './App'
 import Note from './components/Note/Note'
 import Create from './pages/Create/Create'
@@ -48,8 +48,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <NotebooksContextProvider>
-            <RouterProvider router={router} />
-        </NotebooksContextProvider>
+        <ThemeContextProvider>
+            <NotebooksContextProvider>
+                <RouterProvider router={router} />
+            </NotebooksContextProvider>
+        </ThemeContextProvider>
     </React.StrictMode>,
 )

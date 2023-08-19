@@ -1,10 +1,11 @@
 .listNote {
-    border-bottom: 3px solid #AADEFF;
+    border-bottom: 3px solid var(--secondary-theme-dark);
     padding: 10px 20px;
+    color: var(--text);
 }
 
 .listNote--selected {
-    background-color: #ECFFFF;
+    background-color: var(--secondary-theme-light);
 }
 
 .listNote__title,

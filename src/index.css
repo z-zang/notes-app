@@ -6,9 +6,6 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 1.5;
-
-    /* color-scheme: light dark; */
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -17,35 +14,42 @@
 
     height: 100%;
 
-    /* colour variables */
-    /* sidebar heading and note title underline*/
-    --primary-blue: brown;
+    /* default colour (blue) variables */
+    --primary-blue: #39BAFF; /* sidebar heading and note title underline*/
+    --primary-blue-dark: #3890FB; /* add note button and searchbar border*/
+    --secondary-blue: #AFEFFF; /* sidebar listnote bg */
+    --secondary-blue-light: #ECFFFF; /* sidebar listnote selected */
+    --secondary-blue-dark: #AADEFF; /* listnote border, highlight on notebookCard input when editing */
+    --background-white: #FFFFFF; /* searchbar and note  background */
+    --text-black: #000000; /* text color*/
+    --button-gray: #EFEFEF; /* normal button bg */
+    --danger-red: #FF8E8C; /* delete button border/bg*/
 
-    /* add note button and searchbar border*/
-    --primary-blue-dark: brown;
+    /* dark (purple) mode */
+    --primary-purple: #24214F;
+    --primary-purple-light: #3F3B8E;
+    --secondary-purple: #191C29;
+    --secondary-purple-light: #39325B;
+    --secondary-purple-dark: #343258;
+    --button-purple: #373649;
+    --background-purple: #12171b;
+    --text-purple: #FFF3EE;
+    --danger-purple: #B14477;
 
-    /* sidebar listnote bg */
-    --secondary-blue: brown;
 
-    /* sidebar listnote bottom border */
-    --secondary-blue-light: brown;
-
-    /* searchbar and note  background */
-    --primary--white: brown;
-
-    /* text color*/
-    --primary--black: black;
-
-    /* normal button bg */
-    --primary-gray: grey;
-
-    /* delete button border and bg*/
-    --primary-red: grey;
+    --primary-theme: var(--primary-blue);
+    --primary-theme-dark: var(--primary-blue-dark);
+    --secondary-theme: var(--secondary-blue);
+    --secondary-theme-light: var(--secondary-blue-light);
+    --secondary-theme-dark: var(--secondary-blue-dark);
+    --text: var(--text-black);
+    --background: var(--background-white);
+    --button: var(--button-gray);
+    --danger: var(--danger-red);
 }
 
-
 a {
-    color: black;
+    color: var(--text);
     text-decoration: inherit;
 }
 
@@ -54,9 +58,8 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-}
 
-body.darkTheme {}
+}
 
 h1 {
     font-size: xx-large;
@@ -75,12 +78,12 @@ button {
     font-family: inherit;
     cursor: pointer;
     transition: border-color 0.25s;
+    background-color: var(--button);
+    color: var(--text);
 }
 
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
+textarea,
+input {
+    background-color: var(--background);
+    color: var(--text);
 }

@@ -4,7 +4,8 @@
     text-align: center;
     border: none;
     padding: 15px;
-    background-color: #39BAFF;
+    background-color: var(--primary-theme);
+    color: var(--text);
     margin: 10px 20px;
 }
 

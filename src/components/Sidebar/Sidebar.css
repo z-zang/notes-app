@@ -4,28 +4,26 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #AFEFFF;
+    background-color: var(--secondary-theme);
 }
 
 .sidebar__inputContainer {
     display: flex;
     flex-direction: column;
-    background-color: #39BAFF;
+    background-color: var(--primary-theme);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 
 }
 
 .searchbar {
-    border: 3px solid #3890FB;
+    border: 3px solid var(--primary-theme-dark);
     border-radius: 30px;
     font-weight: 500;
     font-size: medium;
     padding: 10px;
-    margin: 0px 10px;
+    margin: 0px 10px 10px 10px;
     text-align: center;
-    margin-bottom: 10px;
-
 }
 
 .listNotes {

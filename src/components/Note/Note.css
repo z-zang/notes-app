@@ -5,7 +5,7 @@
 }
 
 .note__heading {
-    border-bottom: 3px solid #39BAFF;
+    border-bottom: 3px solid var(--primary-theme);
     padding: 0px 10px 20px 0px;
     display: flex;
     align-items: flex-start;

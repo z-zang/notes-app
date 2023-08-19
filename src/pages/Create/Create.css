@@ -4,7 +4,7 @@
     border-radius: 10px;
     margin-right: 20px;
     text-align: center;
-    border: 3px solid #3890FB;
+    border: 3px solid var(--primary-theme-dark);
 }
 
 .newNotebook__button {

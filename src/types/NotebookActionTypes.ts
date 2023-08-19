@@ -11,8 +11,8 @@ export type UPDATE_NOTE = {
     payload: {
         notebookId: string,
         noteId: string,
-        title: string | null
-        body: string | null
+        title: string
+        body: string
     }
 };
 

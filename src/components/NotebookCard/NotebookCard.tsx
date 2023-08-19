@@ -47,7 +47,7 @@ const NotebookCard = ({ notebook }: Props) => {
         <div className="notebookCard__container" key={notebook.id}>
             <input
                 type="text"
-                className={`${isEditable ? 'notebookCard__title--editable' : 'notebookCard__title'}`}
+                className={`notebookCard__title ${isEditable ? 'notebookCard__title--editable' : ''}`}
                 value={title}
                 ref={notebookTitleRef}
                 onChange={(e) => { updateNotebookTitle(e.target.value) }}
