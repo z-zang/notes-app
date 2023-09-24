@@ -13,7 +13,22 @@
     background-color: var(--primary-theme);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
 
+.sidebar__addDeleteNoteContainer {
+    display: flex;
+    background-color: var(--primary-theme);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: space-between;
+    padding: 0.5em 0em;
+    align-self: baseline;
+    width: 100%;
+    position: fixed;
+    z-index: 20;
+    bottom: 0;
+    left: 0;
+    width: inherit;
 }
 
 .searchbar {
@@ -28,4 +43,5 @@
 
 .listNotes {
     overflow-y: scroll;
+    margin-bottom: 72px;
 }

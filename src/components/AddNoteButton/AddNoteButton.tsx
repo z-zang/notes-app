@@ -30,9 +30,7 @@ const AddNoteButton = ({ notebookId, noteListRef }: Props) => {
     }
 
     return (
-        <div className='listNote__addNote'>
-            <button className='listNote__addNoteButton' onClick={() => addNewNote()}>+</button>
-        </div>
+        <button className='addNoteButton' onClick={() => addNewNote()}>✏️</button>
     )
 }
 

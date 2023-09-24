@@ -1,5 +1,5 @@
 * {
-    font-family: 'Shantell Sans', cursive;
+    font-family: 'Shantell Sans', sans-serif;
 }
 
 :root {
@@ -15,15 +15,24 @@
     height: 100%;
 
     /* default colour (blue) variables */
-    --primary-blue: #39BAFF; /* sidebar heading and note title underline*/
-    --primary-blue-dark: #3890FB; /* add note button and searchbar border*/
-    --secondary-blue: #AFEFFF; /* sidebar listnote bg */
-    --secondary-blue-light: #ECFFFF; /* sidebar listnote selected */
-    --secondary-blue-dark: #AADEFF; /* listnote border, highlight on notebookCard input when editing */
-    --background-white: #FFFFFF; /* searchbar and note  background */
-    --text-black: #000000; /* text color*/
-    --button-gray: #EFEFEF; /* normal button bg */
-    --danger-red: #FF8E8C; /* delete button border/bg*/
+    --primary-blue: #39BAFF;
+    /* sidebar heading and note title underline*/
+    --primary-blue-dark: #3890FB;
+    /* add note button and searchbar border*/
+    --secondary-blue: #AFEFFF;
+    /* sidebar listnote bg */
+    --secondary-blue-light: #ECFFFF;
+    /* sidebar listnote selected */
+    --secondary-blue-dark: #AADEFF;
+    /* listnote border, highlight on notebookCard input when editing */
+    --background-white: #FFFFFF;
+    /* searchbar and note  background */
+    --text-black: #000000;
+    /* text color*/
+    --button-gray: #EFEFEF;
+    /* normal button bg */
+    --danger-red: #FF8E8C;
+    /* delete button border/bg*/
 
     /* dark (purple) mode */
     --primary-purple: #24214F;
@@ -58,7 +67,6 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-
 }
 
 h1 {

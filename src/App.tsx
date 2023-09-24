@@ -9,9 +9,9 @@ const App = () => {
     return (
         <main className={`main ${theme}`}>
             <Sidebar />
-            <div className='contentWrapper'>
+            <section className='contentWrapper'>
                 <Outlet />
-            </div>
+            </section>
         </main>
     )
 }

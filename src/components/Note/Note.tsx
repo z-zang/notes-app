@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom"
 import { useNotebooksContext } from "../../hooks/NotebooksContext";
 import './Note.css'
-import DeleteNoteButton from "../DeleteNoteButton/DeleteNoteButton";
+// import DeleteNoteButton from "../DeleteNoteButton/DeleteNoteButton";
 
 const Note = () => {
     const { notebooks, dispatch } = useNotebooksContext();
@@ -43,7 +43,6 @@ const Note = () => {
                     value={note.title}
                     placeholder="Untitled"
                 />
-                <DeleteNoteButton notebook={notebook} />
             </div>
             <textarea
                 className="note__body"

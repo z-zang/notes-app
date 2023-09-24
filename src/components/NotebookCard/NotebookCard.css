@@ -35,7 +35,5 @@
 
 .notebookCard__renameButton,
 .notebookCard__deleteButton {
-    font-size: large;
     padding: 12px;
-
 }

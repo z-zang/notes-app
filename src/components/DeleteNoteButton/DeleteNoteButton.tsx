@@ -14,15 +14,13 @@ const DeleteNoteButton = ({ notebook }: Props) => {
     const navigate = useNavigate();
     const { dispatch } = useNotebooksContext();
     const { notebookId, noteId } = useParams();
-
+    const onlyOneNoteLeft = notebook.notes.length === 1;
     const redirectOnDeleteNoteId = notebook.notes[0]?.id === noteId ?
-        notebook.notes[1]?.id : notebook.notes[0]?.id
+        notebook.notes[1]?.id : notebook.notes[0]?.id;
 
     const deleteNote = () => {
-        const redirectId = notebook.notes.length === 1 ? short.generate() : redirectOnDeleteNoteId
-
-        // add new note if deleting final note
-        if (notebook.notes.length === 1) {
+        const redirectId = onlyOneNoteLeft ? short.generate() : redirectOnDeleteNoteId
+        if (onlyOneNoteLeft) {
             dispatch({
                 type: 'CREATE_NOTE',
                 payload: {
@@ -44,7 +42,7 @@ const DeleteNoteButton = ({ notebook }: Props) => {
     }
 
     return (
-        <button className="note__deleteButton" onClick={() => deleteNote()}>
+        <button className="deleteNoteButton" onClick={() => deleteNote()}>
             <img src={trashIcon} alt="" height='20px' />
         </button>
     )

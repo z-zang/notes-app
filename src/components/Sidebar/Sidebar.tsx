@@ -6,6 +6,8 @@ import NotebookSelect from '../SelectNotebook/SelectNotebook';
 import SearchBar from '../SearchBar/SearchBar';
 import ListNote from '../ListNote/ListNote';
 import AddNoteButton from '../AddNoteButton/AddNoteButton';
+import DeleteNoteButton from '../DeleteNoteButton/DeleteNoteButton';
+
 import './Sidebar.css'
 
 
@@ -36,8 +38,12 @@ const Sidebar = () => {
                 {listNotes ? listNotes.map(note => (
                     <ListNote note={note} key={note.id} />
                 )) : null}
-                {notebookId && <AddNoteButton notebookId={notebookId} noteListRef={noteListRef} />}
             </aside>
+
+            <div className='sidebar__addDeleteNoteContainer'>
+                {notebookId && <AddNoteButton notebookId={notebookId} noteListRef={noteListRef} />}
+                {currentNotebook && <DeleteNoteButton notebook={currentNotebook} />}
+            </div>
         </nav>
     )
 }
